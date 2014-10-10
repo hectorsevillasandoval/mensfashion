@@ -1,0 +1,116 @@
+.bx-wrapper
+  *zoom 1
+  img
+    display block
+    height auto
+    max-width 100%
+  .bx-viewport
+    background #fff
+  .bx-loading
+    height 100%
+    left 0
+    min-height 50px
+    position absolute
+    top 0
+    width 100%
+    z-index 2000
+  .bx-prev
+    background: url(../img/controls.png) no-repeat 0 -32px
+    left: 10px
+  .bx-next
+    background: url(../img/controls.png) no-repeat -43px -32px
+    right: 10px;
+  .bx-pager
+    color #666
+    font-family Arial
+    font-size .85em
+    font-weight bold
+    padding-top 20px
+    text-align center
+    &.bx-default-pager
+      a
+        -moz-border-radius 5px
+        -webkit-border-radius 5px
+        background #666
+        border-radius 5px
+        display block
+        height 10px
+        margin 0 5px
+        outline 0
+        text-indent -9999px
+        width 10px
+  .bx-controls-direction
+    position relative
+    a
+      height 32px
+      margin-top -135px
+      outline 0
+      position absolute
+      text-indent -9999px
+      top 70%
+      width 32px
+      z-index 9999
+      &.disabled
+        display none
+  .bx-controls-auto
+    text-align center
+    .bx-start
+      display block
+      height 11px
+      margin 0 3px
+      outline 0
+      text-indent -9999px
+      width 10px
+    .bx-stop
+      display block
+      height 11px
+      margin 0 3px
+      outline 0
+      text-indent -9999px
+      width 9px
+  .bx-controls
+    &.bx-has-controls-auto
+      &.bx-has-pager
+        .bx-pager
+          text-align left
+          width 80%
+        .bx-controls-auto
+          right 0
+          width 35px
+  .bx-caption
+    background #666\9
+    background rgba(80, 80, 80, 0.75)
+    bottom 0
+    left 0
+    position absolute
+    width 100%
+    span
+      color #fff
+      display block
+      font-family Arial
+      font-size .85em
+      padding 10px
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto
+  position absolute
+  width 100%
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item
+  display inline-block
+  *zoom 1
+  *display inline
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active
+  background #000
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active
+  background-position -86px 0
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active
+  background-position -86px -33px
+

@@ -1,0 +1,88 @@
+/*####################################
+#
+#	Autor: Hector Sevilla
+#	Descripcion: Hoja de estilos para 
+#				 la plantilla web de 
+				 laboratorios rarpe
+#	Fecha: 10/10/2014
+#	Hora: 17:53
+#
+#	1- Barra Superior
+#	2- Cabecera
+#####################################*/
+
+@import 'fonts.styl'
+@import 'normalize.styl'
+@import 'bxslider.styl'
+@import 'flexisel.styl'
+@import 'nib'
+
+
+//Colores
+azul_principal= #3261ab
+gris = #eef2f7
+texto = #424242
+gris_puro = #1a1a1a
+enlaces = #4e4d4d
+inputs= #333232
+
+//OOCSS
+
+.relativo
+	position relative
+.absoluto
+	position absolute
+.fix
+	overflow hidden
+.left
+	float left
+.right
+	float right
+
+[class^="icon-"], [class*=" icon-"]
+	font-family 'icomoon'
+	speak none
+	font-style normal
+	font-weight normal
+	font-variant normal
+	text-transform none
+	line-height 1
+	-webkit-font-smoothing antialiased
+	-moz-osx-font-smoothing grayscale
+
+.icon-telefono
+	&:before
+		content "\e602"
+.icon-slogan
+	&:before
+		content "\e600"
+.icon-slogan
+	&:before
+		content "\e600"
+.icon-rarpeLogo
+	&:before
+		content "\e603"
+.icon-mail
+	&:before
+		content "\e604"
+.icon-facebook
+	&:before
+		content "\e601"
+
+alinear()
+	display inline-block
+	vertical-align top
+a
+	text-decoration none
+ul
+p
+figure
+	margin 0
+	padding 0
+ul
+	list-style none
+
+body
+	font-family 'RarpeRoman'
+	font-size 16px
+	color texto
