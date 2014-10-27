@@ -1,0 +1,29 @@
+.nav-collapse
+    ul
+        margin 0
+        padding 0
+        width 100%
+        display block
+        list-style none
+    li
+        width 100%
+        display block
+    &.opened
+        max-height 9999px
+
+.js
+    .nav-collapse
+        clip rect(0 0 0 0)
+        max-height 0
+        position absolute
+        display block
+        overflow hidden
+        zoom 1
+
+.disable-pointer-events
+    pointer-events none !important
+
+.nav-toggle
+    tap-highlight-color rgba(0,0,0,0)
+    touch-callout none
+    user-select none

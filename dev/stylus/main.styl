@@ -7,8 +7,13 @@
 #	Fecha: 10/10/2014
 #	Hora: 17:53
 #
-#	1- Barra Superior
+#	1- Area redes sociales
 #	2- Cabecera
+#	3- Menu de navegación
+#	4- slider
+#	5- Seccion Principal
+#	6- Footer
+#	7- Media Query
 #####################################*/
 
 @import 'fonts.styl'
@@ -19,10 +24,11 @@
 
 
 //Colores
-azul_principal= #3261ab
-gris = #eef2f7
+negro= #0c0807
+naranja = #f27322
 texto = #424242
-gris_puro = #1a1a1a
+gris = #b7b7b5
+gris-inputs = #1d1d1c
 enlaces = #4e4d4d
 inputs= #333232
 
@@ -50,28 +56,67 @@ inputs= #333232
 	-webkit-font-smoothing antialiased
 	-moz-osx-font-smoothing grayscale
 
-.icon-telefono
-	&:before
-		content "\e602"
-.icon-slogan
+.icon-key
 	&:before
 		content "\e600"
-.icon-slogan
+
+.icon-search
 	&:before
-		content "\e600"
-.icon-rarpeLogo
-	&:before
-		content "\e603"
+		content "\f002"
+
 .icon-mail
 	&:before
-		content "\e604"
-.icon-facebook
+		content "\f003"
+.icon-navicon
 	&:before
-		content "\e601"
+		content "\f0c9"
+
+.icon-cart
+	&:before
+		content "\f07a"
 
 alinear()
 	display inline-block
 	vertical-align top
+.boton
+	background-color: gris
+	height 38px
+	margin 0 auto
+	text-align: center
+	text-transform: uppercase
+	width 132px
+	a
+		&:link
+		&:visited
+			color white
+			display inline-block
+			padding-top 8px
+			font-size: 14px
+.menu
+	height auto
+	opacity 1
+	padding 8px 0
+.boton-trans
+	background-color: #FFF
+	border 1px solid naranja
+	height 38px
+	margin 10px auto
+	text-align: center
+	text-transform: uppercase
+	width 132px
+	a
+		&:link
+		&:visited
+			color naranja
+			display inline-block
+			font-size: 14px
+			padding-top: 8px
+	&:hover
+		background-color: naranja
+		a
+			&:link
+			&:visited
+				color white
 a
 	text-decoration none
 ul
@@ -81,8 +126,501 @@ figure
 	padding 0
 ul
 	list-style none
-
 body
-	font-family 'RarpeRoman'
+	font-family 'OswaldRegular'
 	font-size 16px
 	color texto
+
+/*************************************************************************
+*		1- Area redes sociales
+*	
+* *************************************************************************/
+
+.social
+	background-color: negro
+	clearfix()
+	height auto
+	padding 4px 1rem
+	#movil
+		color white
+		float left
+		&:hover
+			color naranja
+	.socialIcons
+		text-align: right
+		float right
+		li
+			alinear()
+			a
+				display block
+				background-image: url(../img/social-icons.png)
+				height 25px
+				width 25px
+		.fb
+			a
+				background-position: 0 -2px
+		.tw
+			a
+				background-position: -30px -2px
+		.in
+			a
+				background-position: -60px -2px
+		.pi
+			a
+				background-position: -90px -2px
+
+/*************************************************************************
+*		2- Cabecera
+*	
+* *************************************************************************/
+header
+	height auto
+	padding 3px 1rem
+	text-align: center
+	figure
+		font-size: 0
+		margin 5px 0
+		img
+			height auto
+			max-width 100%
+	.buscador
+		margin 1.2rem 0
+		input[type="text"]
+			border 2px solid gris
+			font-family: 'OswaldLight'
+			padding 4px 5px 4px 12px
+			width 90%
+		input[type="submit"]
+			background-color: transparent
+			background-image: url(../img/loop.png)
+			background-position: center center
+			background-repeat: no-repeat
+			border 0
+			right 15px
+			top 8px
+	.panel
+		font-family: 'OswaldLight'
+		font-size: 1rem
+		clearfix()
+		margin-bottom 1rem
+		.user
+			text-transform: capitalize
+			float left
+			a
+				&:link
+				&:visited
+					color gris
+				&:hover
+					color naranja
+			span
+				color naranja
+				font-size: 1rem
+		.carrito
+			float right
+			clearfix()
+			.icono
+				float left
+				margin-right 4px
+				span
+					color naranja
+					font-size: 1rem
+			.precio
+				color gris
+				float left
+				span
+					color naranja
+
+/*************************************************************************
+*		3- Menu de navegación
+*	
+* *************************************************************************/
+nav
+	background-color: naranja
+	display none
+	height auto	
+	padding 8px 0
+	position relative
+	text-align: center
+	transition all .8s ease 0s
+	> ul
+		li
+			//alinear()
+			//border-right 1px solid negro
+			padding 15px 0
+			border-bottom 1px dotted white
+			a
+				&:link
+				&:visited
+					color white
+					display block
+					font-family: 'OswaldLight'
+					font-size: 18px
+					text-transform: capitalize
+				&:hover
+					text-decoration: underline
+			&:hover	
+				ul
+					left 0
+			&:last-child
+				//border-right 0
+				border-bottom 0
+			ul
+				background-color: rgba(255, 255, 255, .8)
+				left -9999px
+				top 44px
+				position absolute
+				width 100%
+				z-index 2200
+				li
+					display block
+					text-align: left
+					padding-left 1rem
+					a
+						display block
+						position relative
+						z-index 2201
+						
+
+/*************************************************************************
+*		4- slider
+*	
+* *************************************************************************/
+.slider
+	img
+		height auto
+		max-width 100%
+
+/*************************************************************************
+*		5- Seccion Principal
+*	
+* *************************************************************************/
+section
+	padding 5px 1rem
+	.categorias
+		.caja
+			text-align: center
+			margin 10px auto
+			max-width 280px
+			figure
+				//max-width 280px
+				height 310px
+				.contenido
+					background-color: rgba(255, 255, 255, 0)
+					height 80%
+					left 8%
+					//opacity 0
+					top 8%
+					width 84%
+					transition all .5s ease-out 0s
+					.titulo
+						color white
+						font-size: 1.2rem
+						margin 4rem auto 6rem auto
+						text-align center
+						text-transform: uppercase
+						transition all 1s ease 0s
+				&:hover
+					.contenido
+						background-color: rgba(255, 255, 255, .6)
+						.titulo
+							color naranja
+							margin-bottom 3rem
+						.boton
+							background-color: naranja
+	h1
+		color negro
+		font-family: 'OswaldBold'
+		font-size: 4.5rem
+		text-align: center
+		text-transform: uppercase
+	.product-query
+		.product
+			height auto
+			margin 10px auto
+			max-width 300px
+			figure
+				font-size: 0
+				img
+					max-width 100%
+					height auto
+			.detalle
+				.titulo
+					background-color: negro
+					height 40px
+					line-height 2
+					overflow hidden
+					text-align: center
+					text-transform: uppercase
+					a
+						&:link
+						&:visited
+							color white
+						&:hover
+							color naranja
+	.banner
+		margin 15px auto
+		img
+			max-width 100%
+			height auto
+
+/*************************************************************************
+*		6- Footer
+*	
+* *************************************************************************/
+footer
+	background-color: negro
+	color #b7b7b5
+	font-family: 'OswaldLight'
+	padding 10px 1rem
+	text-align: center
+	article
+		.title
+			margin 10px 0
+			text-transform: uppercase
+		&:first-child
+			ul
+				li
+					a
+						&:link
+						&:visited
+							color #b7b7b5
+							text-transform: capitalize
+						&:hover
+							color naranja
+		&:nth-child(2)
+			.newsletter
+				input[type="text"]
+					background-color: gris-inputs
+					border 0
+					color #414141
+					display inline-block
+					padding 8px 5px
+				input[type="submit"]
+					background-color: #383838
+					border 0
+					color white
+					padding 8px 10px
+					&:hover
+						color naranja
+		&:nth-child(3)
+			color #383838
+			.title
+				color #b7b7b5
+		&:nth-child(4)
+			.socialIcons
+				li
+					alinear()
+					a
+						background-image: url(../img/social-icons-footer.png)
+						display block
+						height 30px
+						width 30px
+				.fb
+					a
+						background-position: -1px -1px
+				.tw
+					a
+						background-position: -39px -1px
+				.in
+					a
+						background-position: -78px -1px
+				.pi
+					a
+						background-position: -116px -1px
+		&:last-child
+			background-color: transparent
+.post-footer
+	text-align: center
+
+/*************************************************************************
+*		
+*		7- Media query
+* 
+* *************************************************************************/
+
+@media screen and (min-width:400px)
+	header
+		&.small
+			.buscador
+				input[type="submit"]
+					right 25px
+
+	section
+		&.small
+			.categorias
+				clearfix()
+				text-align: center
+				.caja
+					alinear()
+					height auto
+					margin-right 5px
+					max-width 180px
+					figure
+						height auto
+						img
+							height auto
+							max-width 100%
+						.contenido
+							.titulo
+								font-size: .8rem
+								margin 2rem auto 4rem auto
+					&:last-child
+						margin-right 0
+@media screen and (min-width:768px)
+	header
+		&.medium
+			clearfix()
+			figure
+				float left
+			.wrap
+				float right
+				.buscador
+					text-align: right
+					input[type="submit"]
+						right 1rem
+				.panel
+					.user
+						margin-right: 2rem
+	section
+		&.medium
+			.categorias
+				.caja
+					max-width 30%
+					figure
+						.contenido
+							.titulo
+								font-size: 1.1rem
+								margin-bottom 5rem
+			.product-query
+				clearfix()
+				text-align: center
+				.product
+					alinear()
+					max-width 31%
+	footer
+		&.medium
+			text-align: center
+			article
+				alinear()
+				width 45%
+				margin-right 1rem
+				margin-bottom 1rem
+				&:nth-child(2)
+					.newsletter
+						input[type="text"]
+							width 64%
+				&:nth-child(3)
+				&:last-child
+					margin-right 0
+@media screen and (min-width:1000px)
+	.social
+		&.large
+			padding-left 0
+			padding-right 0
+			.ancho
+				clearfix()
+				margin 0 auto
+				max-width 1250px
+			#movil
+				display none
+	header
+		&.large
+			max-width 1250px
+			margin 0 auto
+	nav
+		&.large
+			background-color: transparent
+			display block
+			margin 0 auto
+			max-width 1250px
+			> ul
+				> li
+					alinear()
+					padding 0 1.2rem
+					border-right 1px solid negro
+					a
+						color negro
+						display inline
+						padding-bottom: 10px
+						&:hover
+							color naranja
+							text-decoration: none
+					&:last-child
+						border-right 0
+	.slider
+		&.large
+			max-width 1250px
+			margin 0 auto
+	section
+		&.large
+			max-width 940px
+			margin 0 auto
+			.categorias
+				.caja
+					figure
+						.contenido
+							.titulo
+								margin-bottom 9rem
+						&:hover
+							.contenido
+								.titulo
+									margin-bottom 5rem
+			.product-query
+				.product
+					figure
+						transition all .5s linear 0s
+						&:hover
+							opacity .8
+							transform translateY(-20px)
+	footer
+		&.large
+			padding-left 0
+			padding-right 0
+			.ancho
+				clearfix()
+				margin 0 auto
+				max-width 940px
+			article
+				float left
+				margin 0
+				text-align: left
+				width 20%
+				&:first-child
+					width 13%
+				&:nth-child(2)
+					box-sizing: border-box
+					padding-left 1rem
+					padding-right 2.2rem
+					width 27%
+					.newsletter
+						text-align: right
+						input[type="text"]
+							margin-bottom 10px
+							width 95%
+				&:nth-child(3)
+					padding-left 1rem
+				&:nth-child(4)
+					padding-left 1rem
+					padding-right 15px
+				&:last-child
+					width 15%
+	.post-footer
+		&.large
+			margin 0 auto
+			max-width 940px
+			padding 5px 0
+			.tarjetas
+			.alfa
+				alinear()
+				width 50%
+			.tarjetas
+				text-align: left
+				img
+				p
+					display inline-block
+					vertical-align middle
+				p
+					font-size: 12px
+			.alfa
+				margin-right -4px
+				text-align: right					

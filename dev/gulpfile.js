@@ -9,23 +9,29 @@ var gulp = require('gulp'),
  	connect = require('gulp-connect'),
  	htmlmin = require('gulp-html-minifier'),
  	imagemin = require('gulp-imagemin'),
+    cssshrink = require('gulp-cssshrink'),
+    rev = require('gulp-rev'),
+    base64 = require('gulp-base64'),
+    debug = require('gulp-debug'),
     compressor = require('gulp-compressor');
 
 
 //tareas
 gulp.task('stylus', function () {
-gulp.src('stylus/main.styl')
-		.pipe(stylus({use: [nib()], compress:true}))
-		.pipe(gulp.dest('../public/css'))
-		.pipe(connect.reload());
+    gulp.src('stylus/main.styl')
+    		.pipe(stylus({use: [nib()], compress:true}))
+            .pipe(debug({verbose: true}))
+    		.pipe(gulp.dest('../public/css'))
+    		.pipe(connect.reload());
 	
 });
 
 gulp.task('uglify', function() {
-  gulp.src('js/*.js')
-    .pipe(uglify({compress:true}))
-    .pipe(gulp.dest('../public/js'))
-    .pipe(connect.reload());
+    gulp.src('js/*.js')
+        .pipe(uglify({compress:true}))
+        .pipe(debug({verbose: true}))
+        .pipe(gulp.dest('../public/js'))
+        .pipe(connect.reload());
 });
 gulp.task('imagemin', function() {
     // content
@@ -39,6 +45,7 @@ gulp.task('imagemin', function() {
 gulp.task('minify', function() {
   gulp.src('*.html')
     .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(debug({verbose: true}))
     .pipe(gulp.dest('../public/'))
     .pipe(connect.reload());
 });
@@ -63,7 +70,12 @@ gulp.task('uncss', function() {
     // content
     gulp.src('../public/css/main.css')
         .pipe(uncss({html: ['index.html']}))
-        /*.pipe(compressor())*/
+        .pipe(base64({
+            debug: true
+            }))
+        .pipe(cssshrink())
+        .pipe(debug({verbose: true}))
+        //.pipe(rev())
         .pipe(gulp.dest('../public/uncss/'));
 });
 
