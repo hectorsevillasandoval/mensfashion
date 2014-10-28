@@ -20,6 +20,7 @@
 @import 'normalize.styl'
 @import 'bxslider.styl'
 @import 'flexisel.styl'
+@import 'slidebars.styl'
 @import 'nib'
 
 
@@ -279,6 +280,24 @@ nav
 						display block
 						position relative
 						z-index 2201
+.movil
+	ul
+		li
+			padding .5rem .8rem
+			a
+				&:link
+				&:visited
+					color #ccc
+					font-size: .9rem
+					text-transform: uppercase
+			ul
+				li
+					a
+						&:link
+						&:visited
+							font-size: 1.2rem
+							color white
+							text-transform: capitalize
 						
 
 /*************************************************************************
@@ -512,7 +531,7 @@ footer
 				&:nth-child(3)
 				&:last-child
 					margin-right 0
-@media screen and (min-width:1000px)
+@media screen and (min-width:1024px)
 	.social
 		&.large
 			padding-left 0
